@@ -38,25 +38,17 @@ unregistersymbol(wrldchrbase)
           <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
-[[wrldchrbase]+68]+354:
-db 22 BF 02 00
-
 {$lua}
 local addr=getAddressList().getMemoryRecordByDescription("mp_area_id")
+local n=getAddress(addr.CurrentAddress)
+writeBytes(n,0x22,0xBF,0x02,0x00)
 memoryrecord_freeze(addr)
-
 [DISABLE]
 {$lua}
 local addr=getAddressList().getMemoryRecordByDescription("mp_area_id")
+local n=getAddress(addr.CurrentAddress)
+writeBytes(n,0xFE,0xFF,0xFF,0xFF)
 memoryrecord_unfreeze(addr)
-
-{$asm}
-[[wrldchrbase]+68]+354:
-db FE FF FF FF
-
-
-
-
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
