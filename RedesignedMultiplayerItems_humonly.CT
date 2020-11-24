@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1337050092</ID>
+      <Description>"hollow use redorb - redsign"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscan(reo,15 00 00 00 FF FF FF FF B8 2E 31 01)
+registersymbol(reo)
+
+reo+26:
+db FF FF 63
+
+aobscan(res,14 00 00 00 FF FF FF FF 00 00 00 00 FF FF FF FF D1 07 00 00)
+registersymbol(res)
+
+res+26:
+db FF FF 63
+
+aobscan(creo,16 00 00 00 FF FF FF FF B8 2E 31 01 FF FF FF FF D6 07 00 00)
+registersymbol(creo)
+
+creo+26:
+db FF FF 63
+
+
+
+[DISABLE]
+
+reo+26:
+db 10 00 C1
+unregistersymbol(reo)
+
+res+26:
+db FF FF C1
+unregistersymbol(res)
+
+creo+26:
+db FF FF C1
+unregistersymbol(creo)
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1337050802</ID>
+      <Description>"humanity multiplayer"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscan(hum,65 00 00 00 FF FF FF FF 00 00 00 00 FF FF FF FF 40 08 00 00)
+registersymbol(hum)
+
+hum+26:
+db FF FF BF 31 00
+
+aobscan(thum,66 00 00 00 FF FF FF FF 00 00 00 00 FF FF FF FF 41 08 00 00)
+registersymbol(thum)
+
+thum+26:
+db FF FF BF 31 00
+
+[DISABLE]
+
+hum+26:
+db FF FF 97 31 20
+
+unregistersymbol(hum)
+
+thum+26:
+db FF FF 97 31 20
+
+unregistersymbol(thum)
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
